@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Darwin Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #7f91aa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* needed for absolute/fixed positioning */
+        }
+        #quote-box {
+            background: #eef1f1;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+        #quote {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff944e;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #bb3b17;
+        }
+        /* Version number styling */
+        #version {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 0.9em;
+            color: #fff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quote-box">
+    <div id="quote">Click below to see a Darwin quote!</div>
+    <button onclick="generateQuote()">New Quote</button>
+</div>
+
+<!-- Version placeholder -->
+<div id="version">Version 25.0.1</div>
+
+<script>
+    const quotes = [
+        "I’ve touched chemicals! - Darwin",
+        "I grow so dumb - Darwin",
+        "I’m darwin good - Darwin",
+        "I don’t know what i’m saying about - Darwin",
+        "What if I use the majority of the paper? - Darwin",
+        "I’m probably dumb - Darwin",
+        "I’m og - Darwin",
+        "Oh, I see it, I see it - Darwin",
+        "Can we do ah, oh, ah, portrait! - Darwin",
+        "Wait…. What's motivating? - Darwin",
+        "Why would you say stealing instead of borrow? - Darwin",
+        "Wise - Darwin",
+        "You just can’t do the.. - Darwin",
+        "Record this basketballer - Darwin",
+        "Good times, good times - Darwin",
+        "Why I can’t? - Darwin",
+        "Shooooeeee! - Darwin",
+        "I just rub my shoes on the ground - Darwin",
+        "What is the it? - Darwin",
+        "Sadly, it’s Monday, sadly… - Darwin",
+        "Why would you record every single speech from me? - Darwin",
+        "Check your die map - Darwin",
+        "It’s not even even! - Darwin",
+        "Okay… let me think about it… let me think about it… that’s a sentence - Darwin",
+        "I forgot. Mah, maaah, mah, mah - Darwin",
+        "Yes? Yes…. - Darwin",
+        "Bring all of your book subjects - Darwin",
+        "Darwin for da win, Darwin for da win!!! - Darwin",
+        "Does my voice sound strange - Darwin",
+        "I’m the most constant kid - Darwin",
+        "Why you can edit - Darwin",
+        "What?... What?.. Okay, apologetically apologizes - Darwin",
+        "You wanna see my motivate motivational quote Angus? - Darwin",
+        "It’s not too late to be bored, it’s not too late to be booed! - Darwin",
+        "That's the most beautiful scene - Darwin",
+        "I appreciate your appreciation - Darwin",
+        "Eye decay - Darwin",
+        "Be sensible, be and sensible - Darwin",
+        "It’s actually gonna be true, I think - Darwin",
+        "Daughhhh.. Cough cough - Darwin",
+        "Isaac Nutrients - Darwin",
+        "Eye really cooked - Darwin",
+        "I don’t say anything - Darwin",
+        "You don’t expect you to be called by the teacher - Darwin",
+        "If you think you misbehave I crack you - Darwin",
+        "Are we meant two? - Darwin",
+        "Remember when your laptop is not connected - Darwin",
+        "You need to record that, again, again, you record - Darwin",
+        "Invincibility is the solution - Darwin",
+        "I know that’s a shenanigan - Darwin",
+        "What? Hahaha… Oh my gawd - Darwin",
+        "You know how to record without a recorder? - Darwin",
+        "Can I see, can I refresh? - Darwin",
+        "You keep recording my quote! - Darwin",
+        "Do you forget to remember? - Darwin",
+        "That was so ludicrous - Darwin",
+        "Why you record that awkwardly - Darwin",
+        "Do you wanna know my quotation? I don’t care… - Darwin",
+        "Do you want to become mockingbird? - Darwin",
+        "What - Darwin",
+        "What if I bring one hundred dollars in? - Darwin",
+        "Why I have two born place? - Darwin",
+        "I’ve probably went to Mongolia but I forgot - Darwin",
+        "We need to write our speech now - Darwin",
+        "Oh my god, this is ridiculously ludicrous - Darwin",
+        "I just dropped? - Darwin",
+        "Will spray on your computer if do that - Darwin",
+        "I actually mean to check my work - Darwin",
+        "I believe in shenanigans - Darwin",
+        "I’m the definition of shenanigans - Darwin",
+        "I’m starting yawning - Darwin",
+        "Alright - Darwin",
+        "Can you replay it - Darwin",
+        "Here write twenty five - Darwin",
+        "No - Darwin",
+        "In order to be bold, you must first be bold - Darwin",
+        "I’m not gonna tell you, if it’s crucial for me to tell you, it’s not crucial - Darwin",
+        "That’s my equivalent to god - Darwin",
+        "... - Darwin",
+        "Won’t eat it - Darwin",
+        "Wise and wisdom and! - Darwin",
+        "Smart smartest smartest, I’m the smartest - Darwin",
+        "I’m not gonna resist - Darwin",
+        "I drank coffee this morning - Darwin",
+        "Davido - Darwin",
+        "[In a British accent] A bottle of water - Darwin",
+        "There is no way I [incomprehensible] it - Darwin",
+        "Wait? Where is it? - Darwin",
+        "I don’t know if it is she? - Darwin",
+        "Ah - Darwin",
+        "Im treating my laptop severely - Darwin",
+        "I should work on my food technology - Darwin",
+        "1 billion digits [of pi] - Darwin",      
+    ];
+
+    function generateQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        document.getElementById("quote").innerText = quotes[randomIndex];
+    }
+</script>
+
+</body>
+</html>
