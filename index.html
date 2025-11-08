@@ -1,102 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Darwin Quote Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darwin Quotes</title>
   <style>
     body {
-      background-color: #40c6cc;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      color: #fff;
-      height: 100vh;
+      background-color: #3FC4CA;
+      font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
       margin: 0;
+      color: #252120;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    .quote-box {
+      background-color: #F6F8F7;
+      color: #252120;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 60%;
+      max-width: 700px;
     }
 
     button {
-      background-color: #d6c37e;
-      color: white;
+      background-color: #DDC982;
+      color: #F6F8F7;
       border: none;
-      border-radius: 6px;
-      padding: 10px 20px;
-      margin: 10px;
+      border-radius: 10px;
+      padding: 12px 25px;
+      font-size: 1em;
+      margin-top: 20px;
       cursor: pointer;
-      font-size: 16px;
-      transition: 0.2s;
+      transition: 0.3s ease;
     }
 
     button:hover {
-      background-color: #8c5a40;
+      background-color: #915C43;
     }
 
-    #quote {
-      font-size: 1.3em;
-      margin: 20px 0;
-      color: #f7f9f8;
-      max-width: 600px;
-    }
-
-    .version {
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-      font-size: 0.8em;
-      opacity: 0.7;
-    }
-
-    .email-btn {
+    .feedback-btn {
       position: fixed;
       bottom: 20px;
       left: 20px;
-      background-color: #f39c12;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-size: 14px;
-      text-decoration: none;
+      background-color: #915C43;
+      color: #F6F8F7;
     }
 
-    .email-btn:hover {
-      background-color: #d35400;
+    .feedback-btn:hover {
+      background-color: #DDC982;
+      color: #252120;
+    }
+
+    .version {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.8em;
+      color: #F6F8F7;
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="quote-box">
     <p>Click below to see a Darwin quote!</p>
-    <div id="quote">—</div>
-    <button onclick="newQuote()">New Quote</button>
+    <h2 id="quote">Click “New Quote” to begin your Darwin journey!</h2>
+    <button id="new-quote">New Quote</button>
   </div>
 
-  <a href="mailto:henry.hughes598@gmail.com?subject=Darwin%20Quote%20Site%20Feedback" class="email-btn">
+  <button class="feedback-btn" onclick="window.location.href='mailto:henry.hughes598@gmail.com?subject=Website Feedback or Problem'">
     Report a Problem / Feedback
-  </a>
+  </button>
 
   <div class="version">Version 25.1.0</div>
 
   <script>
     const quotes = [
-      "I've touched chemicals! - Darwin",
+      "I’ve touched chemicals! - Darwin",
       "I grow so dumb - Darwin",
-      "I'm darwin good - Darwin",
-      "I don't know what I'm saying about - Darwin",
+      "I’m darwin good - Darwin",
+      "I don’t know what I’m saying about - Darwin",
       "What if I use the majority of the paper? - Darwin",
-      "I'm probably dumb - Darwin",
-      "I'm og - Darwin",
+      "I’m probably dumb - Darwin",
+      "I’m og - Darwin",
       "Oh, I see it, I see it - Darwin",
       "Can we do ah, oh, ah, portrait! - Darwin",
       "Wait…. What's motivating? - Darwin",
@@ -119,7 +111,7 @@
       "Bring all of your book subjects - Darwin",
       "Darwin for da win, Darwin for da win!!! - Darwin",
       "Does my voice sound strange - Darwin",
-      "I'm the most constant kid - Darwin",
+      "I’m the most constant kid - Darwin",
       "Why you can edit - Darwin",
       "What?... What?.. Okay, apologetically apologizes - Darwin",
       "You wanna see my motivate motivational quote Angus? - Darwin",
@@ -167,7 +159,7 @@
       "No - Darwin",
       "In order to be bold, you must first be bold - Darwin",
       "What - Darwin",
-      "I'm not gonna tell you, if it’s crucial for me to tell you, it’s not crucial - Darwin",
+      "I’m not gonna tell you, if it’s crucial for me to tell you, it’s not crucial - Darwin",
       "That’s my equivalent to god - Darwin",
       "... - Darwin",
       "Won’t eat it - Darwin",
@@ -187,11 +179,11 @@
       "1 billion digits [of pi] - Darwin"
     ];
 
-    function newQuote() {
-      const random = Math.floor(Math.random() * quotes.length);
-      document.getElementById("quote").innerText = quotes[random];
-    }
+    const quoteEl = document.getElementById('quote');
+    document.getElementById('new-quote').addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteEl.textContent = quotes[randomIndex];
+    });
   </script>
 </body>
 </html>
-
