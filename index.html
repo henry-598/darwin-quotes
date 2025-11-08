@@ -175,10 +175,11 @@
 
     function sendFeedback() {
       const quoteText = document.getElementById("quote").innerText;
-      const subject = encodeURIComponent("Darwin Quote Generator Feedback");
-      const body = encodeURIComponent("Quote shown: " + quoteText + "\n\nYour feedback:");
+      const subject = encodeURIComponent("Darwin Quote Generator Feedback/Complaints");
+      const body = encodeURIComponent("Hi Henry,");
       window.location.href = `mailto:henry.hughes598@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
 </body>
 </html>
+
