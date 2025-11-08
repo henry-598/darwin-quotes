@@ -4,39 +4,47 @@
   <meta charset="UTF-8">
   <title>Darwin Quote Generator</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #7f91aa;
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #7f91aa;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
-      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
     }
 
     #quote-box {
       background: #eef1f1;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
       max-width: 600px;
     }
 
     #quote {
-      font-size: 1.2em;
-      margin-bottom: 20px;
+      font-size: 1.3em;
+      margin-bottom: 25px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
     }
 
     button {
       padding: 10px 20px;
       font-size: 1em;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       background-color: #ff944e;
       color: white;
       cursor: pointer;
-      margin: 5px;
+      transition: background-color 0.2s;
     }
 
     button:hover {
@@ -44,38 +52,31 @@
     }
 
     footer {
-      margin-top: 20px;
-      font-size: 0.9em;
-      color: #333;
-    }
-
-    a {
-      color: #bb3b17;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.85em;
+      color: #f0f0f0;
     }
   </style>
 </head>
 <body>
   <div id="quote-box">
     <div id="quote">Click below to see a Darwin quote!</div>
-    <button onclick="generateQuote()">New Quote</button>
-    <button onclick="window.location.href='mailto:henry.hughes598@gmail.com?subject=Darwin%20Quote%20Generator%20Feedback'">Report a Problem / Feedback</button>
+    <div class="button-row">
+      <button onclick="generateQuote()">New Quote</button>
+      <button onclick="sendFeedback()">Report a Problem / Feedback</button>
+    </div>
   </div>
 
-  <footer>
-    <p>Version 25.0.6</p>
-  </footer>
+  <footer>Version 25.0.7</footer>
 
   <script>
     const quotes = [
       "I’ve touched chemicals! - Darwin",
       "I grow so dumb - Darwin",
       "I’m darwin good - Darwin",
-      "I don’t know what i’m saying about - Darwin",
+      "I don’t know what I’m saying about - Darwin",
       "What if I use the majority of the paper? - Darwin",
       "I’m probably dumb - Darwin",
       "I’m og - Darwin",
@@ -170,6 +171,13 @@
     function generateQuote() {
       const randomIndex = Math.floor(Math.random() * quotes.length);
       document.getElementById("quote").innerText = quotes[randomIndex];
+    }
+
+    function sendFeedback() {
+      const quoteText = document.getElementById("quote").innerText;
+      const subject = encodeURIComponent("Darwin Quote Generator Feedback");
+      const body = encodeURIComponent("Quote shown: " + quoteText + "\n\nYour feedback:");
+      window.location.href = `mailto:henry.hughes598@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
 </body>
