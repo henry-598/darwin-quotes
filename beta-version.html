@@ -14,7 +14,7 @@
       align-items: center;
       height: 100vh;
       background-color: #3FC4CA; /* initial aqua background */
-      transition: background-color 1s ease; /* smooth fade */
+      transition: background-color 1s ease;
     }
 
     .quote-box {
@@ -58,7 +58,6 @@
       background-color: #8b5737;
     }
 
-    /* Rarity colours */
     .common { color: black; }
     .rare { color: darkorange; }
     .mythic { color: limegreen; }
@@ -104,7 +103,7 @@
   </div>
 
   <a class="feedback" href="mailto:henry.hughes598@gmail.com?subject=Darwin Quote Feedback">Feedback</a>
-  <div class="version">Version 26.0 - Beta Version</div>
+  <div class="version">Version 26.0</div>
 
   <script>
     const quotes = [
@@ -221,10 +220,13 @@
       { text: "I panic", rarity: "common" }
     ];
 
-    const quoteBox = document.getElementById("quote");
-    const rarityText = document.getElementById("rarity");
-    const newQuoteButton = document.getElementById("new-quote");
-    const shareButton = document.getElementById("share-email");
+    const rarityWeights = {
+      "common": 50,
+      "rare": 25,
+      "mythic": 15,
+      "legendary": 7,
+      "darwin-approved": 3
+    };
 
     const bgColors = {
       "common": "#3FC4CA",
@@ -234,34 +236,49 @@
       "darwin-approved": "#FF6347"
     };
 
+    const quoteBox = document.getElementById("quote");
+    const newQuoteButton = document.getElementById("new-quote");
+    const shareButton = document.getElementById("share-email");
+
+    function weightedRandomQuote() {
+      const totalWeight = quotes.reduce((sum, q) => sum + (rarityWeights[q.rarity] || 0), 0);
+      let random = Math.random() * totalWeight;
+      for (let q of quotes) {
+        random -= rarityWeights[q.rarity] || 0;
+        if (random <= 0) return q;
+      }
+      return quotes[quotes.length - 1];
+    }
+
     function showRandomQuote() {
       quoteBox.classList.add("fade-out");
       setTimeout(() => {
-        const random = quotes[Math.floor(Math.random() * quotes.length)];
-        quoteBox.textContent = `“${random.text}” - Darwin`;
-        quoteBox.className = `quote-box fade-in ${random.rarity}`;
-        rarityText.textContent = `Rarity: ${random.rarity.replace(/-/g,' ').toUpperCase()}`;
-        rarityText.className = `rarity-text ${random.rarity}`;
-        quoteBox.appendChild(rarityText);
+        const random = weightedRandomQuote();
 
-        const buttonsDiv = document.createElement("div");
-        buttonsDiv.className = "quote-buttons";
-        buttonsDiv.appendChild(newQuoteButton);
-        buttonsDiv.appendChild(shareButton);
-        quoteBox.appendChild(buttonsDiv);
+        quoteBox.innerHTML = `“${random.text}” - Darwin
+          <span id="rarity" class="rarity-text ${random.rarity}">Rarity: ${random.rarity.replace(/-/g,' ').toUpperCase()}</span>
+          <div class="quote-buttons">
+            <button id="new-quote">Generate Quote</button>
+            <button id="share-email">Share via Email</button>
+          </div>`;
 
         document.body.style.backgroundColor = bgColors[random.rarity];
+
+        // Reattach buttons
+        document.getElementById("new-quote").addEventListener("click", showRandomQuote);
+        document.getElementById("share-email").addEventListener("click", shareQuote);
       }, 500);
     }
 
-    newQuoteButton.addEventListener("click", showRandomQuote);
-
-    shareButton.addEventListener("click", () => {
-      const quoteText = quoteBox.textContent + " (" + rarityText.textContent + ")";
+    function shareQuote() {
+      const quoteText = quoteBox.textContent;
       const subject = encodeURIComponent("A Darwin Quote for You");
       const body = encodeURIComponent(quoteText);
       window.location.href = `mailto:?subject=${subject}&body=${body}`;
-    });
+    }
+
+    newQuoteButton.addEventListener("click", showRandomQuote);
+    shareButton.addEventListener("click", shareQuote);
   </script>
 </body>
 </html>
