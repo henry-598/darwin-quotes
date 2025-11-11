@@ -28,6 +28,10 @@
       max-width: 700px;
     }
 
+    #quote {
+      transition: opacity 0.5s ease; /* fade effect */
+    }
+
     button {
       background-color: #DDC982;
       color: #F6F8F7;
@@ -78,7 +82,7 @@
     Report a Problem / Feedback
   </button>
 
-  <div class="version">Version 25.1.6</div>
+  <div class="version">Version 25.1.7</div>
 
   <script>
     const quotes = [
@@ -195,9 +199,18 @@
     ];
 
     const quoteEl = document.getElementById('quote');
-    document.getElementById('new-quote').addEventListener('click', () => {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      quoteEl.textContent = quotes[randomIndex];
+    const button = document.getElementById('new-quote');
+
+    button.addEventListener('click', () => {
+      // fade out
+      quoteEl.style.opacity = 0;
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteEl.textContent = quotes[randomIndex];
+        // fade in
+        quoteEl.style.opacity = 1;
+      }, 300); // fade duration matches CSS
     });
   </script>
 </body>
