@@ -5,16 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Darwin Quote Generator</title>
 <style>
-  body {
-    font-family: 'Arial', sans-serif;
+  html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #3FC4CA;
+    transition: background-color 1s ease;
+  }
+
+  .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #3FC4CA;
-    transition: background-color 1s ease;
+    flex-grow: 1;
+    padding: 50px 0;
   }
 
   .quote-box {
@@ -90,22 +101,48 @@
   }
 
   .feedback:hover { background-color: #8b5737; }
+
+  footer {
+    background-color: rgba(249, 250, 249, 0.9);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+
+  footer a {
+    color: #1A9CB3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
-<div id="quote" class="quote-box fade-in">
-  <span id="quote-text">Click below to reveal a Darwin Quote!</span>
-  <span id="rarity" class="rarity-text"></span>
-  <div class="quote-buttons">
-    <button id="new-quote">Generate Quote</button>
-    <button id="share-email">Share via Email</button>
+
+<div class="main-content">
+  <div id="quote" class="quote-box fade-in">
+    <span id="quote-text">Click below to reveal a Darwin Quote!</span>
+    <span id="rarity" class="rarity-text"></span>
+    <div class="quote-buttons">
+      <button id="new-quote">Generate Quote</button>
+      <button id="share-email">Share via Email</button>
+    </div>
   </div>
 </div>
 
 <a class="feedback" href="mailto:henry.hughes598@gmail.com?subject=Darwin Quote Feedback">Feedback</a>
 <div class="version">Version 26.0.0 - Beta Version</div>
 
+<footer>
+  <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank">Terms & Conditions</a>
+</footer>
+
 <script>
+// All quotes array
 const quotes = [
   { text: "I’ve touched chemicals!", rarity: "darwin-approved" },
   { text: "I grow so dumb", rarity: "common" },
@@ -224,18 +261,14 @@ const rarityWeights = { "common": 50, "rare": 25, "mythic": 15, "legendary": 7, 
 const bgColors = { "common": "#3FC4CA", "rare": "#FFD700", "mythic": "#7FFF00", "legendary": "#1E90FF", "darwin-approved": "#FF6347" };
 
 const quoteBox = document.getElementById("quote");
-let lastRarity = "common";
 let forcedCommonCounter = 0;
 
 function weightedRandomQuote() {
   let filteredQuotes = quotes;
-
-  // If last quote was rare/mythic/legendary/darwin-approved, force at least one common next
   if (forcedCommonCounter > 0) {
     filteredQuotes = quotes.filter(q => q.rarity === "common");
     forcedCommonCounter--;
   }
-
   const totalWeight = filteredQuotes.reduce((sum, q) => sum + (rarityWeights[q.rarity] || 0), 0);
   let random = Math.random() * totalWeight;
   for (let q of filteredQuotes) {
@@ -247,13 +280,9 @@ function weightedRandomQuote() {
 
 function showRandomQuote() {
   let random = weightedRandomQuote();
-  
-  // Update cooldown system
   if (["rare","mythic","legendary","darwin-approved"].includes(random.rarity)) {
-    forcedCommonCounter = 1; // next quote forced to common
+    forcedCommonCounter = 1;
   }
-
-  lastRarity = random.rarity;
 
   quoteBox.classList.remove("fade-in");
   quoteBox.classList.add("fade-out");
