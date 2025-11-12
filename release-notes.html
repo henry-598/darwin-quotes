@@ -3,26 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darwin Quote Beta</title>
+<title>DarwinOS 26 Release Notes</title>
 <style>
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #3FC4CA;
+    background: linear-gradient(135deg, #3FC4CA, #6ED3F5);
+    margin: 0;
+    padding: 0;
+    color: #1c1b1a;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    text-align: center;
   }
 
   .card {
     background-color: #f9faf9;
     border-radius: 20px;
     padding: 50px 30px;
-    max-width: 600px;
+    max-width: 700px;
     width: 90%;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    text-align: center;
     animation: fadeIn 1s ease-in;
   }
 
@@ -32,9 +34,26 @@
   }
 
   h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #1c1b1a;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #d74747;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #3c3b3a;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .highlight {
+    color: #d74747;
+    font-weight: bold;
   }
 
   .countdown {
@@ -72,13 +91,25 @@
 </head>
 <body>
   <div class="card">
-    <h1>No Live Beta Version</h1>
+    <h1>🚀 DarwinOS 26 Release Notes</h1>
     <div class="countdown" id="countdown">Loading countdown...</div>
+
+    <h2>🔥 What’s New in DarwinOS 26</h2>
+    <p><span class="highlight">Next-Level Quote Generator:</span> Weighted randomness ensures the perfect mix of legendary, mythic, and Darwin-approved quotes every time.</p>
+    <p><span class="highlight">Dynamic UI:</span> Smooth fade-in/fade-out animations, responsive card layouts, and buttons that feel alive.</p>
+    <p><span class="highlight">Vibrant Backgrounds:</span> Background colors dynamically reflect quote rarity for maximum Darwin vibes.</p>
+    <p><span class="highlight">Sharing & Feedback:</span> Email your favorite quotes and instantly share the chaos with friends.</p>
+    <p><span class="highlight">Easter Eggs & Shenanigans:</span> Hidden quotes, secret animations, and unpredictable surprises await.</p>
+    <p><span class="highlight">Performance Upgrades:</span> Faster loading, smoother animations, and minimal brain lag while reading Darwin quotes.</p>
+
+    <h2>🎉 Explore</h2>
     <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
   </div>
+
   <div class="version">Version 26.0</div>
 
   <script>
+    // Countdown timer
     const countdownEl = document.getElementById('countdown');
     const now = new Date();
     const launchTime = new Date();
