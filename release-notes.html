@@ -13,9 +13,9 @@
     color: #1c1b1a;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
     text-align: center;
+    flex-direction: column;
   }
 
   .card {
@@ -26,6 +26,8 @@
     width: 90%;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     animation: fadeIn 1s ease-in;
+    margin-top: 60px; /* Gap at the top */
+    margin-bottom: 60px;
   }
 
   @keyframes fadeIn {
@@ -109,7 +111,6 @@
   <div class="version">Version 26.0</div>
 
   <script>
-    // Countdown timer
     const countdownEl = document.getElementById('countdown');
     const now = new Date();
     const launchTime = new Date();
