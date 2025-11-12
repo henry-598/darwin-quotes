@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Darwin Quote Beta Site</title>
 <style>
-  body {
+  html, body {
+    height: 100%;
+    margin: 0;
     font-family: 'Arial', sans-serif;
+  }
+
+  body {
     background-color: #3FC4CA;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
   }
 
   .card {
@@ -24,6 +28,7 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     text-align: center;
     animation: fadeIn 1s ease-in;
+    margin-bottom: 20px;
   }
 
   @keyframes fadeIn {
@@ -68,6 +73,28 @@
     color: #1c1b1a;
     opacity: 0.7;
   }
+
+  footer {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(249, 250, 249, 0.9);
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  footer a {
+    color: #1A9CB3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
@@ -81,5 +108,9 @@
     <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
   </div>
   <div class="version">Version 26.0.1</div>
+
+  <footer>
+    <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank">Terms & Conditions</a>
+  </footer>
 </body>
 </html>
