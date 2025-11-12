@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions - DarwinOS 26</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #3FC4CA; /* DarwinOS aqua */
+      margin: 0;
+      padding: 0;
+      color: #1c1b1a;
+    }
+
+    header {
+      background: linear-gradient(135deg, #3FC4CA, #1A9CB3);
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: white;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px 25px 50px 25px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      color: #3FC4CA;
+      margin-top: 30px;
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+
+    .darwin-quotes {
+      background-color: #f0f9f9;
+      border-left: 5px solid #3FC4CA;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: left;
+      padding: 15px 25px;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: #e0f7fa;
+      border-top: 1px solid #3FC4CA;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    a {
+      color: #1A9CB3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.8rem;
+        padding: 40px 15px;
+      }
+      main {
+        padding: 20px 15px 40px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>DarwinOS 26 - Terms & Conditions</header>
+
+<main>
+  <p><strong>Effective Date:</strong> 12 November 2025</p>
+
+  <p>Welcome to DarwinOS 26’s website! By accessing or using this website, including all pages, features, and services (collectively, the “Site”), you agree to comply with these Terms and Conditions. If you do not agree, please exit the Site immediately.</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>By using this Site, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. We may update these terms at any time, and continued use of the Site confirms your acceptance of any updates.</p>
+
+  <h2>2. Using the Site</h2>
+  <p>You agree to use the Site for lawful purposes only. Prohibited behavior includes:</p>
+  <ul>
+    <li>Unlawful or fraudulent activity</li>
+    <li>Disrupting the Site’s functionality or security</li>
+    <li>Attempting unauthorized access to data or accounts</li>
+    <li>Uploading harmful or infringing content</li>
+  </ul>
+
+  <h2>3. Account Responsibility</h2>
+  <p>If you create an account, you are responsible for maintaining its security and all activity on your account. Notify us immediately of unauthorized access.</p>
+
+  <h2>4. Intellectual Property</h2>
+  <p>All Site content—including text, images, audio, and design—is protected by copyright and other intellectual property laws. You may access it for personal, non-commercial use only. Unauthorized use may lead to legal action.</p>
+
+  <h2>5. User-Generated Content</h2>
+  <p>Content you submit grants us a worldwide, royalty-free license to use, reproduce, and display it on the Site. You confirm you own rights to your content and that it does not violate others’ rights.</p>
+
+  <div class="darwin-quotes">
+    <h2>5a. Darwin Quotes</h2>
+    <p>All quotes from "Darwin" on this Site are for entertainment, educational, and personal use. You may view or share them non-commercially, but cannot redistribute or modify commercially without permission. Quotes may be unusual, humorous, or out of context—treat them as lighthearted content!</p>
+  </div>
+
+  <h2>6. Prohibited Activities</h2>
+  <ul>
+    <li>Harassment or harm of other users</li>
+    <li>False or misleading content</li>
+    <li>Automated scripts or bots</li>
+    <li>Collecting others’ personal info without consent</li>
+  </ul>
+
+  <h2>7. Privacy</h2>
+  <p>Your use of the Site is governed by our <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>8. Third-Party Links</h2>
+  <p>We are not responsible for third-party websites linked here. Access them at your own risk.</p>
+
+  <h2>9. Disclaimers</h2>
+  <p>The Site is provided “as is.” We do not guarantee accuracy or reliability of content.</p>
+
+  <h2>10. Limitation of Liability</h2>
+  <p>We are not liable for indirect, incidental, or consequential damages from use of the Site.</p>
+
+  <h2>11. Indemnification</h2>
+  <p>You agree to hold us harmless from claims or damages arising from your use of the Site or content you submit.</p>
+
+  <h2>12. Termination</h2>
+  <p>We may suspend or terminate access for violations of these Terms. Intellectual property, disclaimers, and liability sections survive termination.</p>
+
+  <h2>13. Governing Law</h2>
+  <p>These Terms are governed by South Australian law. Any disputes are subject to the courts in Adelaide, South Australia.</p>
+
+  <h2>14. Feedback</h2>
+  <p>Send feedback, questions, or ideas to <a href="mailto:henry.hughes598@gmail.com">henry.hughes598@gmail.com</a>.</p>
+
+  <h2>15. Acknowledgement</h2>
+  <p>By using this Site, you acknowledge that you have read, understood, and accepted these Terms and Conditions.</p>
+
+</main>
+
+<footer>
+  &copy; 2025 Henry Hughes & Asher Cao. All rights reserved.
+</footer>
+
+</body>
+</html>
