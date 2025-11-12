@@ -9,14 +9,13 @@
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #3FC4CA, #6ED3F5);
     margin: 0;
-    padding: 0;
+    padding: 60px 0; /* Top and bottom padding */
     color: #1c1b1a;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* keep horizontal center but allow vertical gap */
+    align-items: flex-start;
     min-height: 100vh;
     text-align: center;
-    padding-top: 60px; /* top gap */
     box-sizing: border-box;
   }
 
@@ -28,6 +27,7 @@
     width: 90%;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     animation: fadeIn 1s ease-in;
+    margin-bottom: 60px; /* Bottom gap */
   }
 
   @keyframes fadeIn {
@@ -108,7 +108,7 @@
     <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
   </div>
 
-  <div class="version">Version 26.0.1</div>
+  <div class="version">Version 26.0</div>
 
   <script>
     const countdownEl = document.getElementById('countdown');
