@@ -116,13 +116,14 @@
   <div class="bottom-buttons">
     <button onclick="viewStats()">View Stats</button>
     <button onclick="openPopup()">Share via Email</button>
+    <button onclick="resetStats()">Reset Stats</button>
   </div>
 
   <div id="statsBox" class="stats" style="display:none;"></div>
 
   <div id="popup" class="popup">
     <p>Enter email to share this quote:</p>
-    <input type="email" id="emailInput" placeholder="friend@example.com" style="padding:5px; width:90%; border-radius:5px; border:none;"><br><br>
+    <input type="email" id="emailInput" placeholder="friend@example.com.au" style="padding:5px; width:90%; border-radius:5px; border:none;"><br><br>
     <button onclick="shareEmail()">Send</button>
     <button onclick="closePopup()">Close</button>
   </div>
@@ -250,7 +251,8 @@
       { text: "🙏😜🫲", rarity: "Rare" }
     ];
 
-    const rarityCounters = {
+    // Load counters from localStorage if they exist
+    const rarityCounters = JSON.parse(localStorage.getItem("rarityCounters")) || {
       "Common": 0,
       "Rare": 0,
       "Mythic": 0,
@@ -260,11 +262,11 @@
 
     function newQuote() {
       const weightedRarities = [
-        ...Array(75).fill("Common"),      // 75%
-        ...Array(20).fill("Rare"),        // 20%
-        ...Array(3).fill("Mythic"),       // 3%
-        ...Array(1).fill("Legendary"),    // 1%
-        ...Array(1).fill("Darwin Approved") // 1%
+        ...Array(75).fill("Common"),
+        ...Array(18).fill("Rare"),
+        ...Array(5).fill("Mythic"),
+        ...Array(1).fill("Legendary"),
+        ...Array(1).fill("Darwin Approved")
       ];
 
       const chosenRarity = weightedRarities[Math.floor(Math.random() * weightedRarities.length)];
@@ -274,9 +276,9 @@
       document.getElementById("quoteText").textContent = `“${randomQuote.text}” - Darwin`;
       document.getElementById("rarityText").textContent = `[${randomQuote.rarity}]`;
       rarityCounters[randomQuote.rarity]++;
+      localStorage.setItem("rarityCounters", JSON.stringify(rarityCounters));
 
       const quoteBox = document.getElementById("quoteBox");
-
       switch(randomQuote.rarity) {
         case "Common":
           quoteBox.style.backgroundColor = "#fff";
@@ -334,6 +336,18 @@
       const body = encodeURIComponent(`${quote}\nRarity: ${rarity}\n\nSent from the Darwin Quotes Beta site.`);
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
       closePopup();
+    }
+
+    function resetStats() {
+      if (confirm("Are you sure you want to reset all stats?")) {
+        localStorage.removeItem("rarityCounters");
+        for (let key in rarityCounters) {
+          rarityCounters[key] = 0;
+        }
+        const stats = document.getElementById("statsBox");
+        stats.style.display = "none";
+        alert("Stats have been reset!");
+      }
     }
   </script>
 </body>
