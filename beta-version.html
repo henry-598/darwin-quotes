@@ -1,53 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page Removed</title>
-    <style>
-        body {
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
-        .message {
-            background: #fff;
-            padding: 40px 60px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            text-align: center;
-        }
-        .message h1 {
-            font-size: 2rem;
-            color: #c0392b;
-            margin: 0;
-        }
-        .message p {
-            color: #555;
-            margin-top: 12px;
-        }
-        .message a {
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .message a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darwin Quote Beta Site</title>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background-color: #3FC4CA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background-color: #f9faf9;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+    margin-bottom: 20px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1c1b1a;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #1c1b1a;
+  }
+
+  a.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #f9faf9;
+    background-color: #d7c67d;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px 0;
+  }
+
+  a.button:hover {
+    background-color: #8b5737;
+    transform: scale(1.05);
+  }
+
+  .version {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #1c1b1a;
+    opacity: 0.7;
+  }
+
+  footer {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(249, 250, 249, 0.9);
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  footer a {
+    color: #1A9CB3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body>
-    <div class="message">
-        <h1>Page Removed</h1>
-        <p>The page you are looking for has been removed.</p>
-        <p>It has moved to:<br>
-        <a href="https://sites.google.com/gihs.sa.edu.au/darwin-quotes" target="_blank">
-            https://sites.google.com/gihs.sa.edu.au/darwin-quotes
-        </a></p>
-    </div>
+  <div class="card">
+    <h1>No Live Beta Version</h1>
+    <p>The Darwin Quote Generator beta isn’t live yet.<br>
+    The next live beta will be <strong>Version 26.1.0 Beta</strong>, which will be available <strong>29 November 2025</strong>.<br>
+    The next live beta will be <strong>Version 26.1.0 Beta</strong>, which will be available to the general public on the <strong>29 November 2025</strong>.<br>
+    If you want early access to the next beta, please email me:</p>
+    <a class="button" href="mailto:henry.hughes598@gmail.com?subject=Early Access Request">Request Early Access</a>
+    <br>
+    <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
+  </div>
+  <div class="version">Version 26.0.1</div>
+
+  <footer>
+    <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank">Terms & Conditions</a>
+  </footer>
 </body>
 </html>
