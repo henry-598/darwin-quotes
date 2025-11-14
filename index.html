@@ -1,312 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darwin Quote Generator</title>
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #3FC4CA;
-    transition: background-color 1s ease;
-  }
-
-  .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    padding: 50px 0;
-  }
-
-  .quote-box {
-    background-color: #f9faf9;
-    color: #1c1b1a;
-    border-radius: 15px;
-    padding: 25px;
-    width: 70%;
-    max-width: 600px;
-    font-size: 20px;
-    line-height: 1.5;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-align: center;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .rarity-text {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  .quote-buttons {
-    margin-top: 20px;
-  }
-
-  button {
-    background-color: #d7c67d;
-    color: #f9faf9;
-    border: none;
-    padding: 12px 22px;
-    font-size: 16px;
-    border-radius: 10px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: #8b5737;
-  }
-
-  .common { color: black; }
-  .rare { color: darkorange; }
-  .mythic { color: limegreen; }
-  .legendary { color: blue; }
-  .darwin-approved { color: red; }
-
-  .fade-in { opacity: 1; transform: translateY(0); }
-  .fade-out { opacity: 0; transform: translateY(10px); }
-
-  .version {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    font-size: 14px;
-    color: #1c1b1a;
-    opacity: 0.7;
-  }
-
-  .feedback {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background-color: #d7c67d;
-    color: #f9faf9;
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 14px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-
-  .feedback:hover { background-color: #8b5737; }
-
-  footer {
-    background-color: rgba(249, 250, 249, 0.9);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  }
-
-  footer a {
-    color: #1A9CB3;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Page Removed</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .message {
+            background: #fff;
+            padding: 40px 60px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .message h1 {
+            font-size: 2rem;
+            color: #c0392b;
+            margin: 0;
+        }
+        .message p {
+            color: #555;
+            margin-top: 12px;
+        }
+    </style>
 </head>
 <body>
-
-<div class="main-content">
-  <div id="quote" class="quote-box fade-in">
-    <span id="quote-text">Click below to reveal a Darwin Quote!</span>
-    <span id="rarity" class="rarity-text"></span>
-    <div class="quote-buttons">
-      <button id="new-quote">Generate Quote</button>
-      <button id="share-email">Share via Email</button>
+    <div class="message">
+        <h1>Page Removed</h1>
+        <p>The page you are looking for has been removed.</p>
     </div>
-  </div>
-</div>
-
-<a class="feedback" href="mailto:henry.hughes598@gmail.com?subject=Darwin Quote Feedback">Feedback</a>
-<div class="version">Version 26.0.0</div>
-
-<footer>
-  <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank">Terms & Conditions</a>
-</footer>
-
-<script>
-// All quotes array
-const quotes = [
-  { text: "I’ve touched chemicals!", rarity: "darwin-approved" },
-  { text: "I grow so dumb", rarity: "common" },
-  { text: "I’m darwin good", rarity: "common" },
-  { text: "I don’t know what I'm saying about", rarity: "common" },
-  { text: "What if I use the majority of the paper?", rarity: "common" },
-  { text: "I’m probably dumb", rarity: "rare" },
-  { text: "I’m og", rarity: "legendary" },
-  { text: "Oh, I see it, I see it", rarity: "common" },
-  { text: "Can we do ah, oh, ah, portrait!", rarity: "mythic" },
-  { text: "Wait…. What's motivating?", rarity: "common" },
-  { text: "Why would you say stealing instead of borrow?", rarity: "rare" },
-  { text: "Wise", rarity: "common" },
-  { text: "You just can’t do the..", rarity: "common" },
-  { text: "Record this basketballer", rarity: "common" },
-  { text: "Good times, good times", rarity: "common" },
-  { text: "Why I can’t?", rarity: "common" },
-  { text: "Shooooeeee!", rarity: "common" },
-  { text: "I just rub my shoes on the ground", rarity: "common" },
-  { text: "What is the it?", rarity: "common" },
-  { text: "Sadly, it’s Monday, sadly…", rarity: "common" },
-  { text: "Why would you record every single speech from me?", rarity: "legendary" },
-  { text: "Check your die map", rarity: "mythic" },
-  { text: "It’s not even even!", rarity: "common" },
-  { text: "Okay… let me think about it… let me think about it… that’s a sentence", rarity: "rare" },
-  { text: "I forgot. Mah, maaah, mah, mah", rarity: "common" },
-  { text: "Yes? Yes….", rarity: "common" },
-  { text: "Bring all of your book subjects", rarity: "common" },
-  { text: "Darwin for da win, Darwin for da win!!!", rarity: "rare" },
-  { text: "Does my voice sound strange", rarity: "common" },
-  { text: "I’m the most constant kid", rarity: "rare" },
-  { text: "Why you can edit", rarity: "common" },
-  { text: "What?... What?.. Okay, apologetically apologizes", rarity: "common" },
-  { text: "You wanna see my motivate motivational quote Angus?", rarity: "rare" },
-  { text: "It’s not too late to be bored, it’s not too late to be booed!", rarity: "common" },
-  { text: "That's the most beautiful scene", rarity: "common" },
-  { text: "I appreciate your appreciation", rarity: "common" },
-  { text: "Eye decay", rarity: "mythic" },
-  { text: "Be sensible, be and sensible", rarity: "common" },
-  { text: "It’s actually gonna be true, I think", rarity: "common" },
-  { text: "Daughhhh.. Cough cough", rarity: "common" },
-  { text: "Isaac Nutrients", rarity: "mythic" },
-  { text: "Eye really cooked", rarity: "rare" },
-  { text: "I don’t say anything", rarity: "common" },
-  { text: "You don’t expect you to be called by the teacher", rarity: "common" },
-  { text: "If you think you misbehave I crack you", rarity: "common" },
-  { text: "Are we meant two?", rarity: "common" },
-  { text: "Remember when your laptop is not connected", rarity: "common" },
-  { text: "You need to record that, again, again, you record", rarity: "common" },
-  { text: "Invincibility is the solution", rarity: "common" },
-  { text: "I know that’s a shenanigan", rarity: "rare" },
-  { text: "What? Hahaha… Oh my gawd", rarity: "common" },
-  { text: "You know how to record without a recorder?", rarity: "common" },
-  { text: "Can I see, can I refresh?", rarity: "common" },
-  { text: "You keep recording my quote!", rarity: "darwin-approved" },
-  { text: "Do you forget to remember?", rarity: "rare" },
-  { text: "That was so ludicrous", rarity: "mythic" },
-  { text: "Why you record that awkwardly", rarity: "mythic" },
-  { text: "Do you wanna know my quotation? I don’t care…", rarity: "legendary" },
-  { text: "Do you want to become mockingbird?", rarity: "common" },
-  { text: "What", rarity: "mythic" },
-  { text: "What if I bring one hundred dollars in?", rarity: "rare" },
-  { text: "Why I have two born place?", rarity: "rare" },
-  { text: "I’ve probably went to Mongolia but I forgot", rarity: "common" },
-  { text: "We need to write our speech now", rarity: "rare" },
-  { text: "Oh my god, this is ridiculously ludicrous", rarity: "mythic" },
-  { text: "I just dropped?", rarity: "common" },
-  { text: "Will spray on your computer if do that", rarity: "common" },
-  { text: "I actually mean to check my work", rarity: "rare" },
-  { text: "I believe in shenanigans", rarity: "legendary" },
-  { text: "I’m the definition of shenanigans", rarity: "darwin-approved" },
-  { text: "I’m starting yawning", rarity: "rare" },
-  { text: "Allright", rarity: "common" },
-  { text: "Can you replay it", rarity: "rare" },
-  { text: "Here write twenty five", rarity: "common" },
-  { text: "No", rarity: "common" },
-  { text: "In order to be bold, you must first be bold", rarity: "common" },
-  { text: "What", rarity: "common" },
-  { text: "I’m not gonna tell you, if it’s crucial for me to tell you, it’s not crucial", rarity: "common" },
-  { text: "That’s my equivalent to god", rarity: "legendary" },
-  { text: "...", rarity: "rare" },
-  { text: "Won’t eat it", rarity: "common" },
-  { text: "Wise and wisdom and!", rarity: "rare" },
-  { text: "Smart smartest smartest, I’m the smartest", rarity: "mythic" },
-  { text: "I’m not gonna resist", rarity: "common" },
-  { text: "I drank coffee this morning", rarity: "rare" },
-  { text: "Davido", rarity: "darwin-approved" },
-  { text: "[In a British accent] A bottle of water", rarity: "legendary" },
-  { text: "There is no way I [incomprehensible] it", rarity: "common" },
-  { text: "Wait? Where is it?", rarity: "rare" },
-  { text: "I don’t know if it is she?", rarity: "common" },
-  { text: "[incomprehensible]", rarity: "mythic" },
-  { text: "Ah", rarity: "common" },
-  { text: "Im treating my laptop severely", rarity: "rare" },
-  { text: "I should work on my food technology", rarity: "common" },
-  { text: "1 billion digits [of pi]", rarity: "common" },
-  { text: "Gravity is actually confusing right now", rarity: "common" },
-  { text: "Why? I don't like to do the parkrun", rarity: "common" },
-  { text: "In four days will that be Friday first", rarity: "common" },
-  { text: "Is it first day Friday?", rarity: "rare" },
-  { text: "I’m the equivalent to Einstein, Actually, …. I’m not the equivalent of Einstein", rarity: "rare" },
-  { text: "...sorry", rarity: "common" },
-  { text: "Yeah", rarity: "common" },
-  { text: "What’s your battery percentage", rarity: "common" },
-  { text: "What is Darwin approved? Is it rare?", rarity: "mythic" },
-  { text: "Brother!!", rarity: "common" },
-  { text: "What? What? What? What? What? I don’t have it", rarity: "common" },
-  { text: "Stop ragebaiting", rarity: "common" },
-  { text: "Mi mi mi mi mi mi", rarity: "common" },
-  { text: "I don't know… who’s Darwin? Who’s me again?", rarity: "legendary" },
-  { text: "Lowkey is tuff", rarity: "common" },
-  { text: "I panic", rarity: "common" }
-];
-
-const rarityWeights = { "common": 50, "rare": 25, "mythic": 15, "legendary": 7, "darwin-approved": 3 };
-const bgColors = { "common": "#3FC4CA", "rare": "#FFD700", "mythic": "#7FFF00", "legendary": "#1E90FF", "darwin-approved": "#FF6347" };
-
-const quoteBox = document.getElementById("quote");
-let forcedCommonCounter = 0;
-
-function weightedRandomQuote() {
-  let filteredQuotes = quotes;
-  if (forcedCommonCounter > 0) {
-    filteredQuotes = quotes.filter(q => q.rarity === "common");
-    forcedCommonCounter--;
-  }
-  const totalWeight = filteredQuotes.reduce((sum, q) => sum + (rarityWeights[q.rarity] || 0), 0);
-  let random = Math.random() * totalWeight;
-  for (let q of filteredQuotes) {
-    random -= rarityWeights[q.rarity] || 0;
-    if (random <= 0) return q;
-  }
-  return filteredQuotes[filteredQuotes.length - 1];
-}
-
-function showRandomQuote() {
-  let random = weightedRandomQuote();
-  if (["rare","mythic","legendary","darwin-approved"].includes(random.rarity)) {
-    forcedCommonCounter = 1;
-  }
-
-  quoteBox.classList.remove("fade-in");
-  quoteBox.classList.add("fade-out");
-
-  setTimeout(() => {
-    quoteBox.querySelector('#quote-text').textContent = `“${random.text}” - Darwin`;
-    const raritySpan = quoteBox.querySelector('#rarity');
-    raritySpan.textContent = `Rarity: ${random.rarity.replace(/-/g,' ').toUpperCase()}`;
-    raritySpan.className = `rarity-text ${random.rarity}`;
-    document.body.style.backgroundColor = bgColors[random.rarity];
-    quoteBox.classList.remove("fade-out");
-    quoteBox.classList.add("fade-in");
-  }, 300);
-}
-
-function shareQuote() {
-  const quoteText = quoteBox.querySelector('#quote-text').textContent;
-  const subject = encodeURIComponent("A Darwin Quote for You");
-  const body = encodeURIComponent(quoteText);
-  window.location.href = `mailto:?subject=${subject}&body=${body}`;
-}
-
-document.getElementById("new-quote").addEventListener("click", showRandomQuote);
-document.getElementById("share-email").addEventListener("click", shareQuote);
-</script>
 </body>
 </html>
