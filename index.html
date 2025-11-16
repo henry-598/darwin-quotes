@@ -128,7 +128,7 @@
   <div class="quote-box" id="quoteBox">
     <p id="quoteText">Click “New Quote” to get started!</p>
     <p id="rarityText"></p>
-    <button onclick="newQuote()">New Quote</button>
+    <button id="newQuoteBtn" onclick="newQuote()">New Quote</button>
   </div>
 
   <div class="bottom-buttons">
@@ -281,8 +281,24 @@
       "Darwin Approved": 0
     };
 
+    let quoteCooldown = false; // cooldown lock
+
     function newQuote() {
-      // Order: Common > Rare > Mythic > Legendary > Darwin Approved
+      if (quoteCooldown) return; // prevent spamming
+
+      // Start cooldown
+      quoteCooldown = true;
+      const btn = document.getElementById("newQuoteBtn");
+      btn.disabled = true;
+      btn.textContent = "Wait 10 seconds...";
+
+      setTimeout(() => {
+        quoteCooldown = false;
+        btn.disabled = false;
+        btn.textContent = "New Quote";
+      }, 10000);
+
+      // The rest of your quote code:
       const weightedRarities = [
         ...Array(75).fill("Common"),
         ...Array(18).fill("Rare"),
