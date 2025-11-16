@@ -149,7 +149,7 @@
   </div>
 
   <footer>
-    Version 26.1.1 • <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank" rel="noopener">Terms & Conditions</a>
+    Version 26.1.2 • <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank" rel="noopener">Terms & Conditions</a>
   </footer>
 
   <script>
@@ -290,13 +290,13 @@
       quoteCooldown = true;
       const btn = document.getElementById("newQuoteBtn");
       btn.disabled = true;
-      btn.textContent = "Wait 10 seconds...";
+      btn.textContent = "Wait 5 seconds...";
 
       setTimeout(() => {
         quoteCooldown = false;
         btn.disabled = false;
         btn.textContent = "New Quote";
-      }, 10000);
+      }, 5000);
 
       // The rest of your quote code:
       const weightedRarities = [
@@ -431,4 +431,3 @@
   </script>
 </body>
 </html>
-
