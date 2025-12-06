@@ -1,118 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darwin Quote Beta Site</title>
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-  }
-
-  body {
-    background-color: #3FC4CA;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .card {
-    background-color: #f9faf9;
-    border-radius: 20px;
-    padding: 40px 30px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-align: center;
-    animation: fadeIn 1s ease-in;
-    margin-bottom: 20px;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #1c1b1a;
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #1c1b1a;
-  }
-
-  a.button {
-    display: inline-block;
-    text-decoration: none;
-    color: #f9faf9;
-    background-color: #d7c67d;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 5px 0;
-  }
-
-  a.button:hover {
-    background-color: #8b5737;
-    transform: scale(1.05);
-  }
-
-  .version {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    font-size: 14px;
-    color: #1c1b1a;
-    opacity: 0.7;
-  }
-
-  footer {
-    width: 100%;
-    text-align: center;
-    background-color: rgba(249, 250, 249, 0.9);
-    padding: 10px 0;
-    font-size: 14px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-  }
-
-  footer a {
-    color: #1A9CB3;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page Moved</title>
+  <!-- Redirect after 3 seconds; JavaScript does a replace so back button won't return here -->
+  <meta http-equiv="refresh" content="6;url=https://darwinquotes.henry-hughes598.workers.dev">
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{display:grid;place-items:center;background:linear-gradient(180deg,#071029 0%, #081329 100%);color:whitesmoke}
+    .card{max-width:760px;padding:36px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px);text-align:center}
+    h1{font-size:clamp(1.5rem,3.5vw,2.25rem);margin:0 0 8px}
+    p{color:var(--muted);margin:0 0 20px;font-size:1rem}
+    a.button{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#022; font-weight:600;text-decoration:none}
+    .meta{margin-top:18px;color:var(--muted);font-size:0.9rem}
+    .link{color:inherit;text-decoration:underline}
+    .logo{font-weight:700;letter-spacing:0.6px}
+    @media (prefers-reduced-motion: no-preference){
+      .card{transform:translateY(-6px);animation:float 6s ease-in-out infinite}
+      @keyframes float{0%{transform:translateY(-6px)}50%{transform:translateY(6px)}100%{transform:translateY(-6px)}}
+    }
+  </style>
+  <script>
+    (function(){
+      // If JavaScript is enabled, redirect after 3 seconds using replace so back won't return here.
+      var url = 'https://darwinquotes.henry-hughes598.workers.dev';
+      setTimeout(function(){ location.replace(url); }, 3000);
+    })();
+  </script>
 </head>
 <body>
-  <div class="card">
-    <h1>No Live Beta Version</h1>
-    <p>The Darwin Quote Generator beta isn’t live yet.<br>
-    The next live beta will be <strong>Version 26.2.0 Beta</strong>, which will be available <strong>29 November 2025</strong>.<br>
-    <a class="button" href="mailto:henry.hughes598@gmail.com?subject=Early Access Request">Request Early Access</a>
-    <br>
-    <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
-    <br>
-    <!-- Feature Request Button -->
-    <a class="button" href="mailto:henry.hughes598@gmail.com?subject=Feature%20Request%20for%20Next%20Version&body=Please%20describe%20your%20feature%20idea%20below:%0A%0A">Request a Feature for Next Version</a>
+  <div class="card" role="main" aria-labelledby="moved-title">
+    <div class="logo">Darwin Quotes</div>
+    <h1 id="moved-title">This webpage has moved</h1>
+    <p>We've moved this page to a new address. You will be redirected shortly to the new site.</p>
+    <p><a class="button" href="https://darwinquotes.henry-hughes598.workers.dev">Go to darwinquotes.henry-hughes598.workers.dev now</a></p>
+    <p class="meta">If your browser doesn't redirect automatically, click the link above. (Redirect happens in ~3 seconds.)</p>
+    <p class="meta" style="margin-top:12px;color:var(--muted);font-size:0.8rem">If you maintain bookmarks or links, please update them to the new URL.</p>
   </div>
-  <div class="version">Version 26.0.1</div>
-
-  <footer>
-    <a href="https://henry-598.github.io/darwin-quotes/terms-conditions.html" target="_blank">Terms & Conditions</a>
-  </footer>
 </body>
 </html>
