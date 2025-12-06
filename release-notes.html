@@ -1,144 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DarwinOS 26 Release Notes</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #3FC4CA, #6ED3F5);
-    margin: 0;
-    padding: 60px 0; /* Top and bottom padding */
-    color: #1c1b1a;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .card {
-    background-color: #f9faf9;
-    border-radius: 20px;
-    padding: 50px 30px;
-    max-width: 700px;
-    width: 90%;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 1s ease-in;
-    margin-bottom: 60px; /* Bottom gap */
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #d74747;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #3c3b3a;
-  }
-
-  p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-  }
-
-  .highlight {
-    color: #d74747;
-    font-weight: bold;
-  }
-
-  .countdown {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 25px;
-    color: #3c3b3a;
-  }
-
-  a.button {
-    display: inline-block;
-    text-decoration: none;
-    color: #f9faf9;
-    background-color: #d7c67d;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-size: 1rem;
-    margin: 10px 5px 0 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  a.button:hover {
-    background-color: #8b5737;
-    transform: scale(1.05);
-  }
-
-  .version {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    font-size: 14px;
-    opacity: 0.7;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page Moved</title>
+  <!-- Redirect after 3 seconds; JavaScript does a replace so back button won't return here -->
+  <meta http-equiv="refresh" content="6;url=https://darwinquotes.henry-hughes598.workers.dev">
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#7dd3fc;--muted:#94a3b8}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{display:grid;place-items:center;background:linear-gradient(180deg,#071029 0%, #081329 100%);color:whitesmoke}
+    .card{max-width:760px;padding:36px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px);text-align:center}
+    h1{font-size:clamp(1.5rem,3.5vw,2.25rem);margin:0 0 8px}
+    p{color:var(--muted);margin:0 0 20px;font-size:1rem}
+    a.button{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#022; font-weight:600;text-decoration:none}
+    .meta{margin-top:18px;color:var(--muted);font-size:0.9rem}
+    .link{color:inherit;text-decoration:underline}
+    .logo{font-weight:700;letter-spacing:0.6px}
+    @media (prefers-reduced-motion: no-preference){
+      .card{transform:translateY(-6px);animation:float 6s ease-in-out infinite}
+      @keyframes float{0%{transform:translateY(-6px)}50%{transform:translateY(6px)}100%{transform:translateY(-6px)}}
+    }
+  </style>
+  <script>
+    (function(){
+      // If JavaScript is enabled, redirect after 3 seconds using replace so back won't return here.
+      var url = 'https://darwinquotes.henry-hughes598.workers.dev';
+      setTimeout(function(){ location.replace(url); }, 3000);
+    })();
+  </script>
 </head>
 <body>
-  <div class="card">
-    <h1>🚀 DarwinOS 26 Release Notes</h1>
-    <div class="countdown" id="countdown">Loading countdown...</div>
-
-    <h2>🔥 What’s New in DarwinOS 26</h2>
-    <p><span class="highlight">Next-Level Quote Generator:</span> Weighted randomness ensures the perfect mix of legendary, mythic, and Darwin-approved quotes every time.</p>
-    <p><span class="highlight">Dynamic UI:</span> Smooth fade-in/fade-out animations, responsive card layouts, and buttons that feel alive.</p>
-    <p><span class="highlight">Vibrant Backgrounds:</span> Background colors dynamically reflect quote rarity for maximum Darwin vibes.</p>
-    <p><span class="highlight">Sharing & Feedback:</span> Email your favorite quotes and instantly share the chaos with friends.</p>
-    <p><span class="highlight">Easter Eggs & Shenanigans:</span> Hidden quotes, secret animations, and unpredictable surprises await.</p>
-    <p><span class="highlight">Performance Upgrades:</span> Faster loading, smoother animations, and minimal brain lag while reading Darwin quotes.</p>
-
-    <h2>🎉 Explore</h2>
-    <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
+  <div class="card" role="main" aria-labelledby="moved-title">
+    <div class="logo">Darwin Quotes</div>
+    <h1 id="moved-title">This webpage has moved</h1>
+    <p>We've moved this page to a new address. You will be redirected shortly to the new site.</p>
+    <p><a class="button" href="https://darwinquotes.henry-hughes598.workers.dev">Go to darwinquotes.henry-hughes598.workers.dev now</a></p>
+    <p class="meta">If your browser doesn't redirect automatically, click the link above. (Redirect happens in ~3 seconds.)</p>
+    <p class="meta" style="margin-top:12px;color:var(--muted);font-size:0.8rem">If you maintain bookmarks or links, please update them to the new URL.</p>
   </div>
-
-  <div class="version">Version 26.0</div>
-
-  <script>
-    const countdownEl = document.getElementById('countdown');
-    const now = new Date();
-    const launchTime = new Date();
-    launchTime.setHours(12, 1, 0, 0); // 12:01 PM today
-
-    if (now > launchTime) {
-      countdownEl.textContent = "🚀 DarwinOS 26 has launched!";
-    } else {
-      const updateCountdown = () => {
-        const now = new Date();
-        const diff = launchTime - now;
-
-        if (diff <= 0) {
-          countdownEl.textContent = "🚀 DarwinOS 26 has launched!";
-          clearInterval(interval);
-          return;
-        }
-
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        countdownEl.textContent = `Launch in ${hours}h ${minutes}m ${seconds}s`;
-      };
-
-      updateCountdown();
-      const interval = setInterval(updateCountdown, 1000);
-    }
-  </script>
 </body>
 </html>
