@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarwinOS 26 Release Notes and News</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #3FC4CA, #6ED3F5);
+    margin: 0;
+    padding: 0;
+    color: #1c1b1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .card {
+    background-color: #f9faf9;
+    border-radius: 20px;
+    padding: 50px 30px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #d74747;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #3c3b3a;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .highlight {
+    color: #d74747;
+    font-weight: bold;
+  }
+
+  .countdown {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #3c3b3a;
+  }
+
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    color: #f9faf9;
+    background-color: #d7c67d;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin: 10px 5px 0 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .button:hover {
+    background-color: #8b5737;
+    transform: scale(1.05);
+  }
+
+  .version {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🚀 DarwinOS 26 Release Notes</h1>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+    <p>The DarwinOS 26 beta isn’t live yet.<br>
+    The next live beta will be <strong>version 26.1.0 beta</strong>.<br>
+    If you want early access, email me:</p>
+
+    <h2>🔥 What’s New</h2>
+    <p><span class="highlight">Next-Level Quote Generator:</span> Weighted randomness for perfect legendary, mythic, and Darwin-approved surprises.</p>
+    <p><span class="highlight">Dynamic UI:</span> Fade-in/out animations, smooth interactions, and responsive card layouts.</p>
+    <p><span class="highlight">Vibrant Backgrounds:</span> Colors change depending on quote rarity—immerse yourself in the Darwin vibe.</p>
+    <p><span class="highlight">Sharing & Feedback:</span> Email your favorite quotes and request early beta access.</p>
+    <p><span class="highlight">Easter Eggs & Shenanigans:</span> Hidden quotes and secret animations—expect the unexpected.</p>
+
+    <h2>🎉 Early Access & Explore</h2>
+    <a class="button" href="mailto:henry.hughes598@gmail.com?subject=Early Access Request">Request Early Access</a>
+    <a class="button" href="https://henry-598.github.io/darwin-quotes" target="_blank">See the Darwin Quote Generator</a>
+  </div>
+  <div class="version">Version 26.0</div>
+
+  <script>
+    // Countdown timer
+    const countdownEl = document.getElementById('countdown');
+
+    // Set the launch time today at 12:01 PM
+    const now = new Date();
+    const launchTime = new Date();
+    launchTime.setHours(12, 1, 0, 0); // 12:01 PM today
+
+    // If it's already past 12:01 PM, show "Launched!"
+    if (now > launchTime) {
+      countdownEl.textContent = "🚀 DarwinOS 26 has launched!";
+    } else {
+      const updateCountdown = () => {
+        const now = new Date();
+        const diff = launchTime - now;
+
+        if (diff <= 0) {
+          countdownEl.textContent = "🚀 DarwinOS 26 has launched!";
+          clearInterval(interval);
+          return;
+        }
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        countdownEl.textContent = `Launch in ${hours}h ${minutes}m ${seconds}s`;
+      };
+
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
+    }
+  </script>
+</body>
+</html>
